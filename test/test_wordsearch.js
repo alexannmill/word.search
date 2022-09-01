@@ -42,7 +42,7 @@ describe("#wordSearch()", function () {
     assert.isTrue(result);
   });
 
-  it("should return true if the word is present", function () {
+  it("should return false if no word exist", function () {
     const result = wordSearch(
       [
         ["A", "W", "C", "F", "Q", "U", "A", "L"],

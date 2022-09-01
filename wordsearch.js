@@ -1,11 +1,13 @@
 const wordSearch = (letters, word) => {
+  if (word.length < 2) {
+    return false;
+  }
+  if (word === "") {
+    return false;
+  }
   const horizontalJoin = letters.map((ls) => ls.join(""));
   for (l of horizontalJoin) {
     if (l.includes(word)) return true;
-  }
-
-  if (word.length < 2) {
-    return false;
   }
 
   const verticalJoin = transpose(letters).map((x) => x.join(""));
@@ -28,3 +30,5 @@ const transpose = (letters) => {
   }
   return newArray;
 };
+
+module.exports = wordSearch;
